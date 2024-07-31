@@ -27,7 +27,6 @@ export class UserController {
 
   @Post('account')
   @HttpCode(HttpStatus.OK)
-  @ApiBearerAuth()
   @ApiBody({ type: HttpRestApiModelCreateUserBody })
   @ApiResponse({ status: HttpStatus.OK, type: HttpRestApiResponseUser })
   public async createAccount(@Body() body: HttpRestApiModelCreateUserBody): Promise<CoreApiResponse<UserUseCaseDto>> {
